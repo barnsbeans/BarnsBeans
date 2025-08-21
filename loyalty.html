@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barns – Loyalty</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body data-page="loyalty">
+  <div class="screen">
+    <header class="app-header compact">
+      <div class="status-bar"></div>
+      <div class="brand small">
+        <img class="brand-logo" src="imgs/HomePage/logo.png" alt="barn's logo">
+      </div>
+      <div class="header-wave"></div>
+    </header>
+
+    <main class="loyalty-page">
+      <!-- بطاقة الولاء الرئيسية -->
+      <section class="loyalty-hero">
+        <div class="loyalty-header">
+          <h1 class="loyalty-title">Tree Growth Program</h1>
+          <p class="loyalty-subtitle">Grow your coffee tree, unlock rewards, become a coffee master</p>
+        </div>
+        
+        <!-- بطاقة الولاء الكبيرة -->
+        <div class="loyalty-card-large">
+          <div class="loyalty-card-header">
+            <div class="loyalty-tier">
+              <span class="tier-name">GREEN TIER</span>
+              <span class="tier-icon">🌿</span>
+            </div>
+            <div class="loyalty-points">
+              <span class="points-number" id="loyalty-total">0</span>
+              <span class="points-label">Total Leaves</span>
+            </div>
+          </div>
+          
+          <div class="loyalty-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="loyalty-progress"></div>
+            </div>
+                         <div class="progress-text">
+               <span id="loyalty-current">0</span> / <span id="loyalty-next">50</span> leaves to next tier
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- إحصائيات نمو الشجرة -->
+      <section class="loyalty-stats">
+        <h2 class="section-title">Tree Growth Stats 🌳</h2>
+        <div class="stats-grid">
+          <div class="stat-card green">
+            <div class="stat-icon">🍃</div>
+            <div class="stat-number" id="loyalty-green">0</div>
+            <div class="stat-label">Green Leaves</div>
+            <div class="stat-value">Growing strong</div>
+          </div>
+          <div class="stat-card gold">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-number" id="loyalty-gold">0</div>
+            <div class="stat-label">Gold Leaves</div>
+            <div class="stat-value">Premium quality</div>
+          </div>
+          <div class="stat-card streak">
+            <div class="stat-icon">🔥</div>
+            <div class="stat-number" id="loyalty-streak">0</div>
+            <div class="stat-label">Day Streak</div>
+            <div class="stat-value">Daily care</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- مستويات نمو الشجرة -->
+      <section class="loyalty-tiers">
+        <h2 class="section-title">Tree Growth Levels 🌱</h2>
+        <div class="tiers-list">
+          <div class="tier-item current" id="tier-green">
+            <div class="tier-info">
+              <div class="tier-icon">🌿</div>
+              <div class="tier-details">
+                <div class="tier-name">SPROUT TIER</div>
+                <div class="tier-requirement">0-49 leaves</div>
+                <div class="tier-benefits">Basic rewards, growing phase</div>
+              </div>
+            </div>
+            <div class="tier-status">Current</div>
+          </div>
+          
+          <div class="tier-item locked" id="tier-silver">
+            <div class="tier-info">
+              <div class="tier-icon">🥈</div>
+              <div class="tier-details">
+                <div class="tier-name">GROWING TIER</div>
+                <div class="tier-requirement">50-99 leaves</div>
+                <div class="tier-benefits">Premium rewards, flourishing</div>
+              </div>
+            </div>
+            <div class="tier-status">🔒 Locked</div>
+          </div>
+          
+          <div class="tier-item locked" id="tier-gold">
+            <div class="tier-info">
+              <div class="tier-icon">🥇</div>
+              <div class="tier-details">
+                <div class="tier-name">MASTER TIER</div>
+                <div class="tier-requirement">100+ leaves</div>
+                <div class="tier-benefits">VIP rewards, coffee master</div>
+              </div>
+            </div>
+            <div class="tier-status">🔒 Locked</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المكافآت المتاحة -->
+      <section class="loyalty-rewards">
+        <h2 class="section-title">Tree Growth Rewards 🌿</h2>
+        <div class="rewards-grid">
+                     <div class="reward-item" id="reward-discount">
+             <div class="reward-icon">💰</div>
+             <div class="reward-content">
+               <div class="reward-name">Discount Code</div>
+               <div class="reward-cost">15 leaves</div>
+               <div class="reward-description">Get 20% off your next order</div>
+             </div>
+             <button class="reward-btn" disabled>Redeem</button>
+           </div>
+           
+           <div class="reward-item" id="reward-cookie">
+             <div class="reward-icon">🍪</div>
+             <div class="reward-content">
+               <div class="reward-name">Free Cookie</div>
+               <div class="reward-cost">25 leaves</div>
+               <div class="reward-description">Enjoy a delicious cookie with your coffee</div>
+             </div>
+             <button class="reward-btn" disabled>Redeem</button>
+           </div>
+           
+                       <div class="reward-item" id="reward-second">
+              <div class="reward-icon">👥</div>
+              <div class="reward-content">
+                <div class="reward-name">Second Coffee Free</div>
+                <div class="reward-cost">40 leaves</div>
+                <div class="reward-description">Buy one coffee, get the second free</div>
+              </div>
+              <button class="reward-btn" disabled>Redeem</button>
+            </div>
+           
+           <div class="reward-item" id="reward-coffee">
+             <div class="reward-icon">☕</div>
+             <div class="reward-content">
+               <div class="reward-name">Free Coffee</div>
+               <div class="reward-cost">60 leaves</div>
+               <div class="reward-description">Get a free coffee of your choice</div>
+             </div>
+             <button class="reward-btn" disabled>Redeem</button>
+           </div>
+           
+           <div class="reward-item" id="reward-upgrade">
+             <div class="reward-icon">⭐</div>
+             <div class="reward-content">
+               <div class="reward-name">Size Upgrade</div>
+               <div class="reward-cost">80 leaves</div>
+               <div class="reward-description">Upgrade your coffee to the next size</div>
+             </div>
+             <button class="reward-btn" disabled>Redeem</button>
+           </div>
+           
+
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="item"><span class="ico"><img src="imgs/HomePage/Home icon.svg" alt="Home"></span><span>Home</span></a>
+      <a href="tree.html" class="item"><span class="ico"><img src="imgs/HomePage/Tree icon.svg" alt="Tree"></span><span>Tree</span></a>
+      <a href="#" class="item disabled"><span class="ico"><img src="imgs/HomePage/Order icon.svg" alt="Orders"></span><span>Orders</span></a>
+      <a href="#" class="item disabled"><span class="ico"><img src="imgs/HomePage/Account icon.svg" alt="Loyalty"></span><span>Loyalty</span></a>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
